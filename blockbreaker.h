@@ -6,7 +6,7 @@
 #define RED 2
 #define GREEN 3
 #define BLUE 4
-#define BLACK 5
+#define BLACK 1
 #define INC 6
 #define DEC 7
 #define C1 8
