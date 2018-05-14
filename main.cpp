@@ -7,7 +7,8 @@
 
 int score=0;
 int totaldead=0;
-void initialize()	//To set the initial co-ordinates of the objects on the screen //done
+void initialize()	
+	//To set the initial co-ordinates of the objects on the screen
 {
 	for(int n=0,x=4,y=376;n<45;n++,x+=66)
 	{
@@ -52,8 +53,9 @@ void initialize()	//To set the initial co-ordinates of the objects on the screen
 	block.blue=0.419608;
 
 }
-bool check_collision(float Ax, float Ay, float Aw, float Ah, float Bx, float By, float Bw, float Bh) //Function for checking collision
-{  //done
+bool check_collision(float Ax, float Ay, float Aw, float Ah, float Bx, float By, float Bw, float Bh) 
+	//Function for checking collision
+{ 
   if ( Ay+Ah < By ) return false; //if A is more to the lft than B
   else if ( Ay > By+Bh ) return false; //if A is more to rgt than B
   else if ( Ax+Aw < Bx ) return false; //if A is higher than B
@@ -62,8 +64,9 @@ bool check_collision(float Ax, float Ay, float Aw, float Ah, float Bx, float By,
   return true; //There is a collision because none of above returned false
 }
 
-void reshape()		//Modify the co-ordinates according to the key-presses and collisions etc...
-{//done
+void reshape()		
+	//Modify the co-ordinates according to the key-presses and collisions etc...
+{
 	if(block.myx<=0)
 	  block.myx=0;
 	if(block.myx+block.width>600)
@@ -143,15 +146,15 @@ void specialDown(int key,int x,int y)
 	}
 }
 void keyboard(unsigned char key,int x,int y)
-{ //done
-	if(key==27) 		//27 corresponds to the esc key
+{ 
+	if(key==27) 		//27 value corresponds to the esc key
 	{
 		ball.velx=0;
 		ball.vely=0;	//To stop the ball from moving
 		callMenu();
 	}
 }
-void myinit() //done
+void myinit()
 {
 	glViewport(0,0,600,400);
 	glLoadIdentity();
@@ -159,7 +162,9 @@ void myinit() //done
 	glMatrixMode(GL_PROJECTION);
 	gluOrtho2D(0,600,0,400);
 }
-void draw()		//Render the objects on the screen using the latest updated co-ordinates //done
+void draw()		
+	//Render the objects on the screen using the latest updated co-ordinates 
+	
 {
 	for(int i=0;i<45;i++)
 	{
@@ -189,7 +194,7 @@ void draw()		//Render the objects on the screen using the latest updated co-ordi
     }
 
 }
-void display() //done
+void display() 
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glClearColor(red,green,blue,1);
@@ -352,23 +357,7 @@ void callMenu()
 
 
 }
-/*void processmenu(int opt)
-{
-	switch(opt)
-	{
-		case CONTINUE:
-			revert();
-			break;
-		case INC:
-			ball.velx++;
-			ball.vely++;
-			break;
 
-		case QUIT: exit(0);
-	}
-
-}
-*/
 void revert()
 {
 	ball.velx=10;
