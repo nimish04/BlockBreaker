@@ -38,7 +38,7 @@ void edgedetect(float x1,float y1,float x2,float y2,int *le,int *re)
 }
 
 void scanfill(float x1,float y1,float x2,float y2,float x3,float y3,float x4,float y4)
-{
+{ //this is the scan line filling algorithm.
     int le[600],re[600],i,j;
 
     for(i=0;i<600;i++)
